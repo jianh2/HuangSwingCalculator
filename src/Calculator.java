@@ -23,12 +23,38 @@ public class Calculator extends JFrame implements ActionListener, KeyListener {
                 if(textField2.getText().length() > 0){
                     int Bill = Integer.parseInt(textField2.getText());
                     System.out.println(Bill);
+                }else{
+                String num = textField1.getText();
+            }
+
+
+
+        }
+        });
+
+        textField1.addKeyListener((new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+                if(textField1.getText().length() > 0){
+                    int Tip = Integer.parseInt(textField1.getText());
+                    System.out.println("Tip:" + Tip);
+                }else{
+                    String num2 = textField1.getText();
                 }
 
 
             }
-        });
+
+        }));
+
+
     }
+
+
+
+
+
 
     private void createUIComponenets(){
         setContentPane(mainPanel);
@@ -38,7 +64,7 @@ public class Calculator extends JFrame implements ActionListener, KeyListener {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         button1.addActionListener(this);
         button2.addActionListener(this);
-        textField1.addKeyListener(this);
+
         setVisible(true);
 
 
